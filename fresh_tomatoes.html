@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sai Rahul's Favorite Movies!</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="bootstrap/css/movie.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 50px;
+        }
+        @font-face {
+            font-family: SanFran;
+            src: url(bootstrap/fonts/sanfran/SanFranciscoText-Regular.otf);
+            font-weight: normal;
+        }
+        @font-face {
+            font-family: SanFran;
+            src: url(bootstrap/fonts/sanfran/SanFranciscoText-Bold.otf);
+            font-weight: bold;
+        }
+        @font-face {
+            font-family: SanFran;
+            src: url(bootstrap/fonts/sanfran/SanFranciscoText-Light.otf);
+            font-weight: 100;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        .movie-tile:hover {
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+        .storyline {
+            font-size:.85em;
+            font-family: SanFran;
+            margin-top:10px;
+        }
+        .mtitle {
+            font-size:1.4em;
+            font-family: SanFran;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .rating{
+            font-family: SanFran;
+            font-size:.85em;
+            font-weight: 100;
+            float:left;
+            text-align:left;
+            margin-top: 10px;
+        }
+        .runt{
+            font-family: SanFran;
+            font-size:.85em;
+            font-weight: 100;
+            text-align: right;
+            margin-top: 10px;
+        }
+        .myear {
+            font-size:1.2em;
+            font-family: SanFran;
+        }
+        div {
+            font-family: SanFran;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+    <script type="text/javascript" charset="utf-8">
+    //Solution found on stackoverflow
+    //Find largest movie tiles size and resize all other movie tiles.
+    	$(document).ready(function() {
+  	// Get an array of all element heights
+  		var elementHeights = $('.w3-card-4').map(function() {
+    	return $(this).height();
+  		}).get();
+  	// Math.max takes a variable number of arguments
+  	// `apply` is equivalent to passing each height as an argument
+  		var maxHeight = Math.max.apply(null, elementHeights);
+  	// Set each height to the max height
+  		$('.w3-card-4').height(maxHeight-250);
+		});
+	</script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+
+          <div class="navbar-site">
+            <a class="navbar-sites" href="http://www.sairahul.me" target="_blank">Sai Rahul</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+<div class="w3-col m4 movie-tile text-center" data-trailer-youtube-id="F-eMt3SrfFU" data-toggle="modal" data-target="#trailer">
+<div class="w3-container">
+  <div class="w3-card-4">
+    <div class="w3-image">
+      <img src="http://bit.ly/2scXeKd" width="120px;">
+    </div>
+
+    <header class="w3-border-bottom w3-border-black">
+        <h2 class="mtitle">Dunkirk</h2>
+        <p class="myear">(2017)</p>
+    </header>
+
+    <div class="w3-container">
+      <p class="storyline">Dunkirk is an upcoming English-language war film written, co-produced, and directed by Christopher Nolan. Set during World War II, it concerns the Dunkirk evacuation.</p>
+    </div>
+
+    <div class="w3-container w3-border-top w3-border-black">
+        <p class="rating">Rating: R</p>
+        <p class="runt">Runtime: 94 mins</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="w3-col m4 movie-tile text-center" data-trailer-youtube-id="Fm3VgcyaPfo" data-toggle="modal" data-target="#trailer">
+<div class="w3-container">
+  <div class="w3-card-4">
+    <div class="w3-image">
+      <img src="https://cdn.traileraddict.com/miniposter/warner-bros-pictures/justice-league-poster/7.jpg" width="120px;">
+    </div>
+
+    <header class="w3-border-bottom w3-border-black">
+        <h2 class="mtitle">Justice League,</h2>
+        <p class="myear">(2017)</p>
+    </header>
+    <div class="w3-container">
+        <p class="storyline">Together, Batman and Wonder Woman work quickly to recruit a team to stand against this newly awakened enemy.</p>
+    </div>
+
+    <div class="w3-container w3-border-top w3-border-black">
+        <p class="rating">Rating: R</p>
+        <p class="runt">Runtime: 108 mins</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="w3-col m4 movie-tile text-center" data-trailer-youtube-id="QUlr8Am4zQ0" data-toggle="modal" data-target="#trailer">
+<div class="w3-container">
+  <div class="w3-card-4">
+    <div class="w3-image">
+      <img src="https://cdn.traileraddict.com/content/europacorp/the-circle-poster-2.jpg" width="120px;">
+    </div>
+
+    <header class="w3-border-bottom w3-border-black">
+        <h2 class="mtitle">The Circle</h2>
+        <p class="myear">(2017)</p>
+    </header>
+
+    <div class="w3-container">
+        <p class="storyline">Mae Holland (Emma Watson) seizes the opportunity of a lifetime when she lands a job with the world's most powerful technology and social media company.</p>
+    </div>
+
+    <div class="w3-container w3-border-top w3-border-black">
+        <p class="rating">Rating: PG-13</p>
+        <p class="runt">Runtime: 152 mins</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="w3-col m4 movie-tile text-center" data-trailer-youtube-id="dW1BIid8Osg" data-toggle="modal" data-target="#trailer">
+<div class="w3-container">
+  <div class="w3-card-4">
+    <div class="w3-image">
+      <img src="https://cdn.traileraddict.com/miniposter/marvel-studios/guardians-of-the-galaxy-2-poster/5.jpg" width="120px;">
+    </div>
+
+    <header class="w3-border-bottom w3-border-black">
+        <h2 class="mtitle">Guardians of the Galaxy Vol. 2</h2>
+        <p class="myear">(2017)</p>
+    </header>
+
+    <div class="w3-container">
+        <p class="storyline">Peter Quill and his fellow Guardians are hired by a powerful alien race, the Sovereign, to protect their precious batteries from invaders.</p>
+    </div>
+
+    <div class="w3-container w3-border-top w3-border-black">
+        <p class="rating">Rating: R</p>
+        <p class="runt">Runtime: 99 mins</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="w3-col m4 movie-tile text-center" data-trailer-youtube-id="v7MGUNV8MxU" data-toggle="modal" data-target="#trailer">
+<div class="w3-container">
+  <div class="w3-card-4">
+    <div class="w3-image">
+      <img src="https://cdn.traileraddict.com/miniposter/marvel-studios/thor-ragnarok-poster/2.jpg" width="120px;">
+    </div>
+
+    <header class="w3-border-bottom w3-border-black">
+        <h2 class="mtitle">Thor: Ragnarok</h2>
+        <p class="myear">(2017)</p>
+    </header>
+
+    <div class="w3-container">
+        <p class="storyline">Imprisoned on the other side of the universe, the mighty Thor (Chris Hemsworth) finds himself in a deadly gladiatorial contest that pits him against the Hulk (Mark Ruffalo), his former ally and fellow Avenger.</p>
+    </div>
+
+    <div class="w3-container w3-border-top w3-border-black">
+        <p class="rating">Rating: R</p>
+        <p class="runt">Runtime: 175 mins</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="w3-col m4 movie-tile text-center" data-trailer-youtube-id="oagwBHoh6Rs" data-toggle="modal" data-target="#trailer">
+<div class="w3-container">
+  <div class="w3-card-4">
+    <div class="w3-image">
+      <img src="https://cdn.traileraddict.com/miniposter/universal-pictures/despicable-me-3/2.jpg" width="120px;">
+    </div>
+
+    <header class="w3-border-bottom w3-border-black">
+        <h2 class="mtitle">Despicable Me 3</h2>
+        <p class="myear">(2017)</p>
+    </header>
+
+    <div class="w3-container">
+        <p class="storyline">Gru (Steve Carell) and his wife Lucy (Kristen Wiig) must stop former '80s child star Balthazar Bratt (Trey Parker) from achieving world domination.</p>
+    </div>
+
+    <div class="w3-container w3-border-top w3-border-black">
+        <p class="rating">Rating: R</p>
+        <p class="runt">Runtime: 91 mins</p>
+    </div>
+  </div>
+</div>
+</div>
+
+    </div>
+  </body>
+</html>
