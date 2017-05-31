@@ -21,12 +21,12 @@ justice = media.Movie("Justice League",
                       "94 mins",
                       "2017")
 cirlce = media.Movie("The Circle",
-                      "Mae Holland (Emma Watson) seizes the opportunity of a lifetime"
-                      "when she lands a job with the world's"
-                      "and social media company.  etc...",
+                      "Mae Holland seizes the opportunity of a lifetime \
+                      when she lands a job with the world's \
+                      and social media company.  etc...",
                       "http://bit.ly/2rQclwB",
                       "https://www.youtube.com/watch?v=QUlr8Am4zQ0",
-                      "R",
+                      "U/A",
                       "94 mins",
                       "2017")
 guardians = media.Movie("Guardians of the Galaxy Vol. 2",
@@ -35,7 +35,7 @@ guardians = media.Movie("Guardians of the Galaxy Vol. 2",
                       etc...",
                       "http://bit.ly/2r6pFvy",
                       "https://www.youtube.com/watch?v=dW1BIid8Osg",
-                      "R",
+                      "U/A",
                       "94 mins",
                       "2017")
 thor = media.Movie("Thor: Ragnarok",
@@ -44,7 +44,7 @@ thor = media.Movie("Thor: Ragnarok",
                       etc...",
                       "http://bit.ly/2ribhAT",
                       "https://www.youtube.com/watch?v=v7MGUNV8MxU",
-                      "R",
+                      "U/A",
                       "94 mins",
                       "2017")
 despicable_3 = media.Movie("Despicable Me 3",
@@ -53,7 +53,7 @@ despicable_3 = media.Movie("Despicable Me 3",
                       etc...",
                       "http://bit.ly/2s8Paet",
                       "https://www.youtube.com/watch?v=oagwBHoh6Rs",
-                      "R",
+                      "U",
                       "94 mins",
                       "2017")
 
