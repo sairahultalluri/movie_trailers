@@ -7,7 +7,18 @@ Udacity Full Stack Web Developer Python Project. Generate a website from your Py
 media.py defines movie title, movie storyline, movie poster image, and movie trailer. Also calls webbrowser to open movie trailer URL.
 
 ## Demo
-Compiled and final product can be seen here http://sairahul-talluri.github.io/movie_trailers/fresh_tomatoes.html 
+Compiled and final product can be seen [here] (http://bit.ly/2qy7bWv)
+
+
+## To run:
+
+    1. Download "movie_trailers.zip" and unzip the file.
+    2a. From File Explorer: double-click the "entertainment_center.py" file.
+     b. From cmd prompt: [path_to_your_unzipped_folder]\entertainment_center.py
+
+To modify the list of movies:
+
+    1. Edit the entertainment_center.py file using IDLE or your favorite editor.
 
 ## Motivation
 
